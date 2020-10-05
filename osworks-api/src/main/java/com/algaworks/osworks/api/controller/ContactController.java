@@ -12,13 +12,14 @@ import com.algaworks.osworks.domain.model.Contact;
 
 @RestController
 public class ContactController {
-	
+
 	@PersistenceContext
 	private EntityManager manager;
-	
+
 	@GetMapping("/contacts")
 	public List<Contact> listar() {
-		return manager.createQuery("from adventureworks.contact", Contact.class).getResultList();
+		return manager.createQuery("from Contact", Contact.class)
+				.getResultList();
 	}
-	
+
 }

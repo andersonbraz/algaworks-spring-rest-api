@@ -28,6 +28,11 @@ public class Contact {
 	@Column(name = "Suffix")
 	private String suffix;
 	
+	public Contact() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@Column(name = "EmailAddress")
 	private String email;
 	
