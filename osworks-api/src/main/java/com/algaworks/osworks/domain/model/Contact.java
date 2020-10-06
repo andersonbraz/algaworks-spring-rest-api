@@ -14,7 +14,7 @@ public class Contact {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ContactID")
-	private Integer id;
+	private Long contactId;
 	
 	@Column(name = "FirstName")
 	private String firstName;
@@ -45,25 +45,12 @@ public class Contact {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Contact(int id, String firstName, String middleName, String lastName, String suffix, String email,
-			int promotion, String phone) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.middleName = middleName;
-		this.lastName = lastName;
-		this.suffix = suffix;
-		this.email = email;
-		this.promotion = promotion;
-		this.phone = phone;
+	public Long getContactId() {
+		return contactId;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
+	public void setContactId(Long contactId) {
+		this.contactId = contactId;
 	}
 
 	public String getFirstName() {
@@ -81,7 +68,7 @@ public class Contact {
 	public void setMiddleName(String middleName) {
 		this.middleName = middleName;
 	}
-
+	
 	public String getLastName() {
 		return lastName;
 	}
@@ -121,7 +108,7 @@ public class Contact {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
+
 	public String getModifiedDate() {
 		return modifiedDate;
 	}
@@ -132,16 +119,24 @@ public class Contact {
 
 	@Override
 	public String toString() {
-		return "Contact [id=" + id + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName="
-				+ lastName + ", suffix=" + suffix + ", email=" + email + ", promotion=" + promotion + ", phone=" + phone
-				+ "]";
+		return "Contact [contactId=" + contactId + ", firstName=" + firstName + ", middleName=" + middleName
+				+ ", lastName=" + lastName + ", suffix=" + suffix + ", email=" + email + ", promotion=" + promotion
+				+ ", phone=" + phone + ", modifiedDate=" + modifiedDate + "]";
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + id;
+		result = prime * result + ((contactId == null) ? 0 : contactId.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		result = prime * result + ((middleName == null) ? 0 : middleName.hashCode());
+		result = prime * result + ((modifiedDate == null) ? 0 : modifiedDate.hashCode());
+		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
+		result = prime * result + promotion;
+		result = prime * result + ((suffix == null) ? 0 : suffix.hashCode());
 		return result;
 	}
 
@@ -154,9 +149,49 @@ public class Contact {
 		if (getClass() != obj.getClass())
 			return false;
 		Contact other = (Contact) obj;
-		if (id != other.id)
+		if (contactId == null) {
+			if (other.contactId != null)
+				return false;
+		} else if (!contactId.equals(other.contactId))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (firstName == null) {
+			if (other.firstName != null)
+				return false;
+		} else if (!firstName.equals(other.firstName))
+			return false;
+		if (lastName == null) {
+			if (other.lastName != null)
+				return false;
+		} else if (!lastName.equals(other.lastName))
+			return false;
+		if (middleName == null) {
+			if (other.middleName != null)
+				return false;
+		} else if (!middleName.equals(other.middleName))
+			return false;
+		if (modifiedDate == null) {
+			if (other.modifiedDate != null)
+				return false;
+		} else if (!modifiedDate.equals(other.modifiedDate))
+			return false;
+		if (phone == null) {
+			if (other.phone != null)
+				return false;
+		} else if (!phone.equals(other.phone))
+			return false;
+		if (promotion != other.promotion)
+			return false;
+		if (suffix == null) {
+			if (other.suffix != null)
+				return false;
+		} else if (!suffix.equals(other.suffix))
 			return false;
 		return true;
 	}
-
+	
 }
