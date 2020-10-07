@@ -35,6 +35,7 @@ public class ContactController {
 	
 	@GetMapping("/{contactId}")
 	public ResponseEntity<Contact> buscar(@PathVariable Long contactId) {
+		
 		Optional<Contact> contact = contactRepository.findById(contactId);
 		
 		if(contact.isPresent()) {
