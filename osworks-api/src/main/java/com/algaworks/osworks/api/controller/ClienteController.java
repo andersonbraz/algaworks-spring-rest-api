@@ -35,7 +35,16 @@ public class ClienteController {
 		
 		return Arrays.asList(c1, c2, c3);
 		
+	}
+	
+	@GetMapping("/sample")
+	public String especifico() {
 		
+		List<Cliente> lista = this.listar();
+		
+		String resposta = lista.get(0).getNome();
+		
+		return resposta;
 	}
 
 }
