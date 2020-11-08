@@ -1,11 +1,14 @@
 package com.algaworks.osworks.domain.model;
 
+import com.algaworks.domain.util.Classificacao;
+
 public class Cliente {
 	
 	private Long id;
 	private String nome;
 	private String email;
 	private String telefone;
+	private Classificacao classe;
 	
 	public Long getId() {
 		return id;
@@ -31,5 +34,12 @@ public class Cliente {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	public Classificacao getClasse() {
+		return classe;
+	}
+	public void setClasse(int valor) {
+		this.classe = Classificacao.ADULTO;
+	}
+
 
 }

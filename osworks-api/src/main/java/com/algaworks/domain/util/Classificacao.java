@@ -2,15 +2,14 @@ package com.algaworks.domain.util;
 
 public enum Classificacao {
 	
-	A(1),
-	B(2),
-	C(3),
-	D(4);
+	ADULTO(1),
+	MENOR_INCAPAZ(2),
+	MENOR_CAPAZ(3);
 	
-	private final int valor;
+	private int valor;
 
 	Classificacao(int valorClassificacao){
-		valor = valorClassificacao;
+		this.valor = valorClassificacao;
 	}
 	
 	public int getValor() {

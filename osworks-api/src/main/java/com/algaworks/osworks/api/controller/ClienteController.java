@@ -22,16 +22,19 @@ public class ClienteController {
 		c1.setNome("Anderson Braz");
 		c1.setTelefone("06199998888");
 		c1.setEmail("contato@andersonbraz.com");
+		c1.setClasse(39);
 		
 		c2.setId(2L);
 		c2.setNome("João Rossi");
 		c2.setTelefone("03177776666");
 		c2.setEmail("joao@andersonbraz.com");
+		c2.setClasse(8);
 		
 		c3.setId(3L);
 		c3.setNome("Gustavo Nery");
 		c3.setTelefone("06155554444");
 		c3.setEmail("gustavo@andersonbraz.com");
+		c3.setClasse(1);
 		
 		return Arrays.asList(c1, c2, c3);
 		
